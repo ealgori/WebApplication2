@@ -249,6 +249,11 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\User\App.js" />
+    <Content Include="Scripts\User\Controller.js" />
+    <Content Include="Scripts\User\ListController.js" />
+    <Content Include="Scripts\User\Models.js" />
+    <Content Include="Scripts\User\Views.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

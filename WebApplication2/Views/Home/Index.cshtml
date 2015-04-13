@@ -1,24 +1,140 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    @*<link href="jumbotron.css" rel="stylesheet">*@
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    @* <script src="../../assets/js/ie-emulation-modes-warning.js"></script>*@
+    <style type="text/css"></style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="container">
+        <div id="main">
+
+        </div>
+
+
+
+        <footer>
+            <p>© Company 2014</p>
+        </footer>
+
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/template" id="header-template">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Task name" class="form-control">
+                    </div>
+
+                    <button type="submit" id="add-task" class="btn btn-success">Add task</button>
+                    <button type="submit" id="filter" class="btn btn-primary">Filter</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </script>
+    <script type="text/template" id="todo-view-template">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bs-callout bs-callout-info" id="callout-glyphicons-location">
+                    <h4 id="name">{{name}}</h4>
+                    <p><code>{{comment}}</code></p>
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bs-callout" style="float:right; font-size:30px">
+                    <a href=""> <i class="glyphicon glyphicon-remove"></i></a>
+                   
+
+                </div>
+            </div>
+
+        </div>
+
+    </script>
+    <script type="text/template" id="list-template">
+        <div id="itemList">
+
+        </div>
+    </script>
+
+    <script type="text/template" id="footer-template">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Total:{{total()}}
+        </div>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    @*<script src="../../dist/js/bootstrap.min.js"></script>*@
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    @*<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>*@
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.1/backbone.marionette.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.radio/0.9.0/backbone.radio.js"></script>
+    <script src="~/Scripts/User/App.js"></script>
+    <script src="~/Scripts/User/Models.js"></script>
+    <script src="~/Scripts/User/Views.js"></script>
+    <script src="~/Scripts/User/Controller.js"></script>
+    <script src="~/Scripts/User/ListController.js"></script>
+    <script>
+        $(function () {
+
+
+            App.start();
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>
