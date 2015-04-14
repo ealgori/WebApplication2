@@ -37,6 +37,24 @@
              //, { "name": "Task11", "comment": "description11" }
             ];
             return json;
+        },
+
+        removeItem: function (model) {
+          //  debugger;
+            model.collection.remove(model);
+            //model.collection.save();
+            model.destroy();
+            
+        },
+
+        addItem: function (data, collection) {
+            //debugger;
+            var model = new App.Models.Todo();
+            model.set(data);
+            
+            collection.create(model);
+           // collection.save();
+
         }
         }
     //)

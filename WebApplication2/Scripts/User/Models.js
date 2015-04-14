@@ -1,9 +1,13 @@
 ﻿'use strict';
 App.module("Models", function (Models, App, Backbone, Marionette) {
     Models.Todo =  Backbone.Model.extend({
-        default: {
+        defaults: {
             comment: "no comment yet"
         },
+        filter:function(criteria){
+            return  this.get("name").indexOf(criteria) > -1
+        },
+
         //validate:
         //    {
 

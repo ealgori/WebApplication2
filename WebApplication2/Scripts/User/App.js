@@ -20,3 +20,12 @@ App.channel.reply("ItemList", function () {
     return App.ListController.repository.getItems();
     
 })
+
+App.channel.comply("delItem", function (model) {
+    App.ListController.repository.removeItem(model);
+});
+
+App.channel.comply("addItem", function (item, collection) {
+    App.ListController.repository.addItem(item, collection);
+})
+

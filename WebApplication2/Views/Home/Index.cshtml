@@ -64,13 +64,13 @@
                 <a class="navbar-brand" href="#">Project name</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form navbar-right" id="add-form">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Task name" class="form-control">
+                        <input type="text" id="name" name="name" placeholder="Task name" class="form-control">
                     </div>
 
-                    <button type="submit" id="add-task" class="btn btn-success">Add task</button>
-                    <button type="submit" id="filter" class="btn btn-primary">Filter</button>
+                    <button type="submit" id="add-btn" class="btn btn-success">Add task</button>
+                    <button type="button" id="filter-btn" class="btn btn-primary">Filter</button>
                 </form>
             </div><!--/.navbar-collapse -->
         </div>
@@ -81,13 +81,13 @@
                 <div class="bs-callout bs-callout-info" id="callout-glyphicons-location">
                     <h4 id="name">{{name}}</h4>
                     <p><code>{{comment}}</code></p>
-                   
+
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="bs-callout" style="float:right; font-size:30px">
-                    <a href=""> <i class="glyphicon glyphicon-remove"></i></a>
-                   
+                    <a class="js-del"> <i class="glyphicon glyphicon-remove"></i></a>
+
 
                 </div>
             </div>
@@ -119,6 +119,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.1/backbone.marionette.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.radio/0.9.0/backbone.radio.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.syphon/0.4.1/backbone.syphon.min.js"></script>
     <script src="~/Scripts/User/App.js"></script>
     <script src="~/Scripts/User/Models.js"></script>
     <script src="~/Scripts/User/Views.js"></script>
