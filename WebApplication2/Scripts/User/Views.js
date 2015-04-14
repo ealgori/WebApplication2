@@ -74,8 +74,16 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
             }
         },
         serializeData: function () {
+            var self  = this;
             return {
-                count: this.collection.filter().length
+                
+                count: this.collection.filter(
+                    function(value) { 
+                        Views.filterFunc(value, 0, self.collection) }
+                        ).length
+
+
+                   
             }
         },
         filter: Views.filterFunc,
