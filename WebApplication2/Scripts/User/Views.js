@@ -24,7 +24,7 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
         template: "#list-template",
         childView: Views.Todo,
         childViewContainer: "#itemList",
-        filter: Views.filterFunc,
+       // filter: Views.filterFunc,
 
         collectionEvents: {
             "change":"render"
@@ -55,7 +55,11 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
             "submit @ui.form": "add",
             'keyup @ui.input': 'onInputKeyup'
         },
-        onInputKeyup:function(){
+        onInputKeyup: function () {
+            var val = $("#name").val();
+            this.collection.updateFilter(function (model) {
+                return model.filter(val);
+            });
             this.collection.trigger("change");
         },
         add:function(e)
@@ -77,10 +81,7 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
             var self  = this;
             return {
                 
-                count: this.collection.filter(
-                    function(value) { 
-                        Views.filterFunc(value, 0, self.collection) }
-                        ).length
+                count: this.collection.length
 
 
                    

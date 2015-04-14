@@ -20,7 +20,10 @@
                 });
                
             }
-            return items;
+            var filteredCollection = new VirtualCollection(items, {
+               
+            }) ;
+            return filteredCollection
         },
         initializeCollection: function () {
 
