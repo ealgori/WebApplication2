@@ -12,11 +12,16 @@ App.module("Models", function (Models, App, Backbone, Marionette) {
         //    {
 
         //    }
-        localStorage: new Backbone.LocalStorage("todo"),
+        url:"api/values"
+       // localStorage: new Backbone.LocalStorage("todo"),
     });
     Models.TodoCollection = Backbone.Collection.extend({
-        localStorage: new Backbone.LocalStorage("todo"),
-        model:Models.Todo
+        initialize:function(models,options){
+            this.page = 0;
+        },
+        // localStorage: new Backbone.LocalStorage("todo"),
+        model: Models.Todo,
+        url:"api/values"
 
     });
 })

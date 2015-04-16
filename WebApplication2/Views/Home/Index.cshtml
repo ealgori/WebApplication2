@@ -66,7 +66,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right" id="add-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Task name" class="form-control">
+                        <input type="text" id="name" name="name" placeholder="Task name" class="form-control" value="{{search()}}">
                     </div>
 
                     <button type="submit" id="add-btn" class="btn btn-success">Add task</button>
@@ -99,6 +99,10 @@
         <div id="itemList">
 
         </div>
+        <div class="row">
+            <div class="col-md-offset-4"></div>
+            <div class="col-md-4"><a id="more">More</a></div>
+        </div>
     </script>
 
     <script type="text/template" id="footer-template">
@@ -125,7 +129,8 @@
     <script src="~/Scripts/User/App.js"></script>
     <script src="~/Scripts/User/Models.js"></script>
     <script src="~/Scripts/User/Views.js"></script>
-    <script src="~/Scripts/User/Controller.js"></script>
+    @*<script src="~/Scripts/User/Controller.js"></script>*@
+    <script src="~/Scripts/User/Router.js"></script>
     <script src="~/Scripts/User/ListController.js"></script>
     <script>
         $(function () {

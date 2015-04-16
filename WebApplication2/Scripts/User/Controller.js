@@ -2,10 +2,14 @@
 App.module("Controller", function (Controller, App, Backbone, Marionette) {
     Controller.Controller =  Marionette.Controller.extend({
         initialize: function () {
-            var items =  App.channel.request("ItemList");
-            this.showHeader(items);
-            this.showFooter(items);
-            this.showMain(items);
+            var fetchingitems = App.channel.request("ItemList");
+            var self = this;
+            $.when(fetchingitems).done(function (items) {
+                self.showHeader(items);
+                self.showFooter(items);
+                self.showMain(items);
+            });
+           
         },
         showHeader: function (items) {
             var header = new App.Views.Header({collection:items});

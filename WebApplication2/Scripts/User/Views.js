@@ -21,20 +21,34 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
 
     });
     Views.TodoList =  Marionette.CompositeView.extend({
+        initialize:function(options)
+        {
+            this.page=options.page;
+        },
         template: "#list-template",
         childView: Views.Todo,
         childViewContainer: "#itemList",
        // filter: Views.filterFunc,
 
         collectionEvents: {
-            "change":"render"
-        }
+
+            "change": "render"
+        },
         //events: {
         //    "click":"clickEv"
         //},
         //clickEv: function (e) {
 
         //}
+        ui: { more: "#more" },
+        events:{
+        "click @ui.more":"more"
+        },
+       
+        more: function () {
+            this.page++;
+            App.channel.command("add:page", this.collection,this.page,"Task");
+        }
     });
 
     Views.Header =  Marionette.ItemView.extend({
@@ -68,7 +82,22 @@ App.module("Views", function (Views, App, Backbone, Marionette) {
             var serialized = Backbone.Syphon.serialize(this);
             
             App.channel.command("addItem", serialized, this.collection);
-        }
+        },
+        templateHelpers: {
+            search: function () {
+                return this.criteria;
+            }
+        },
+        serializeData: function () {
+            var self = this;
+            return {
+
+                criteria: this.options.criteria
+
+
+
+            }
+        },
     });
     Views.Footer =  Marionette.ItemView.extend({
         template: "#footer-template",
